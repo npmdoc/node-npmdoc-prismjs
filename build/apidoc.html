@@ -1,0 +1,1751 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/LeaVerou/prism#readme"
+
+    >prismjs (v1.6.0)</a>
+</h1>
+<h4>Lightweight, robust, elegant syntax highlighting. A spin-off project from Dabblet.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prismjs">module prismjs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.Token">
+            function <span class="apidocSignatureSpan">prismjs.</span>Token
+            <span class="apidocSignatureSpan">(type, content, alias, matchedStr, greedy)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.highlight">
+            function <span class="apidocSignatureSpan">prismjs.</span>highlight
+            <span class="apidocSignatureSpan">(text, grammar, language)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.highlightAll">
+            function <span class="apidocSignatureSpan">prismjs.</span>highlightAll
+            <span class="apidocSignatureSpan">(async, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.highlightElement">
+            function <span class="apidocSignatureSpan">prismjs.</span>highlightElement
+            <span class="apidocSignatureSpan">(element, async, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.tokenize">
+            function <span class="apidocSignatureSpan">prismjs.</span>tokenize
+            <span class="apidocSignatureSpan">(text, grammar, language)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.</span>hooks</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.</span>languages</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.</span>plugins</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.</span>prism_core</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prismjs.Token">module prismjs.Token</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.Token.Token">
+            function <span class="apidocSignatureSpan">prismjs.</span>Token
+            <span class="apidocSignatureSpan">(type, content, alias, matchedStr, greedy)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.Token.stringify">
+            function <span class="apidocSignatureSpan">prismjs.Token.</span>stringify
+            <span class="apidocSignatureSpan">(o, language, parent)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prismjs.hooks">module prismjs.hooks</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.hooks.add">
+            function <span class="apidocSignatureSpan">prismjs.hooks.</span>add
+            <span class="apidocSignatureSpan">(name, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.hooks.run">
+            function <span class="apidocSignatureSpan">prismjs.hooks.</span>run
+            <span class="apidocSignatureSpan">(name, env)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.hooks.</span>all</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prismjs.languages">module prismjs.languages</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.languages.DFS">
+            function <span class="apidocSignatureSpan">prismjs.languages.</span>DFS
+            <span class="apidocSignatureSpan">(o, callback, type, visited)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.languages.extend">
+            function <span class="apidocSignatureSpan">prismjs.languages.</span>extend
+            <span class="apidocSignatureSpan">(id, redef)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.languages.insertBefore">
+            function <span class="apidocSignatureSpan">prismjs.languages.</span>insertBefore
+            <span class="apidocSignatureSpan">(inside, before, insert, root)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>abap</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>actionscript</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>ada</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>apacheconf</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>apl</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>applescript</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>asciidoc</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>aspnet</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>autohotkey</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>autoit</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>bash</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>basic</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>batch</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>brainfuck</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>bro</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>c</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>clike</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>coffeescript</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>css</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>html</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>javascript</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>js</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>markup</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>mathml</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>svg</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.languages.</span>xml</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prismjs.prism_core">module prismjs.prism_core</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.prism_core.Token">
+            function <span class="apidocSignatureSpan">prismjs.prism_core.</span>Token
+            <span class="apidocSignatureSpan">(type, content, alias, matchedStr, greedy)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.prism_core.highlight">
+            function <span class="apidocSignatureSpan">prismjs.prism_core.</span>highlight
+            <span class="apidocSignatureSpan">(text, grammar, language)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.prism_core.highlightAll">
+            function <span class="apidocSignatureSpan">prismjs.prism_core.</span>highlightAll
+            <span class="apidocSignatureSpan">(async, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.prism_core.highlightElement">
+            function <span class="apidocSignatureSpan">prismjs.prism_core.</span>highlightElement
+            <span class="apidocSignatureSpan">(element, async, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.prism_core.tokenize">
+            function <span class="apidocSignatureSpan">prismjs.prism_core.</span>tokenize
+            <span class="apidocSignatureSpan">(text, grammar, language)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.prism_core.</span>hooks</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.prism_core.</span>languages</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.prism_core.</span>plugins</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prismjs.prism_core.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prismjs.util">module prismjs.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.util.clone">
+            function <span class="apidocSignatureSpan">prismjs.util.</span>clone
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.util.encode">
+            function <span class="apidocSignatureSpan">prismjs.util.</span>encode
+            <span class="apidocSignatureSpan">(tokens)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.util.objId">
+            function <span class="apidocSignatureSpan">prismjs.util.</span>objId
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prismjs.util.type">
+            function <span class="apidocSignatureSpan">prismjs.util.</span>type
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prismjs" id="apidoc.module.prismjs">module prismjs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.Token" id="apidoc.element.prismjs.Token">
+        function <span class="apidocSignatureSpan">prismjs.</span>Token
+        <span class="apidocSignatureSpan">(type, content, alias, matchedStr, greedy)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Token = function (type, content, alias, matchedStr, greedy) {
+	this.type = type;
+	this.content = content;
+	this.alias = alias;
+	// Copy of the full string this token was created from
+	this.length = (matchedStr || &#x22;&#x22;).length|0;
+	this.greedy = !!greedy;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.highlight" id="apidoc.element.prismjs.highlight">
+        function <span class="apidocSignatureSpan">prismjs.</span>highlight
+        <span class="apidocSignatureSpan">(text, grammar, language)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">highlight = function (text, grammar, language) {
+		var tokens = _.tokenize(text, grammar);
+		return Token.stringify(_.util.encode(tokens), language);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			worker.postMessage(JSON.stringify({
+				language: env.language,
+				code: env.code,
+				immediateClose: true
+			}));
+		}
+		else {
+			env.highlightedCode = _.<span class="apidocCodeKeywordSpan">highlight</span>(env.code, env.grammar, env.language);
+
+			_.hooks.run(&#x27;before-insert&#x27;, env);
+
+			env.element.innerHTML = env.highlightedCode;
+
+			callback &#x26;&#x26; callback.call(element);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.highlightAll" id="apidoc.element.prismjs.highlightAll">
+        function <span class="apidocSignatureSpan">prismjs.</span>highlightAll
+        <span class="apidocSignatureSpan">(async, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">highlightAll = function (async, callback) {
+		var env = {
+			callback: callback,
+			selector: &#x27;code[class*=&#x22;language-&#x22;], [class*=&#x22;language-&#x22;] code, code[class*=&#x22;lang-&#x22;], [class*=&#x22;lang-&#x22;] code&#x27;
+		};
+
+		_.hooks.run(&#x22;before-highlightall&#x22;, env);
+
+		var elements = env.elements || document.querySelectorAll(env.selector);
+
+		for (var i=0, element; element = elements[i++];) {
+			_.highlightElement(element, async === true, env.callback);
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.highlightElement" id="apidoc.element.prismjs.highlightElement">
+        function <span class="apidocSignatureSpan">prismjs.</span>highlightElement
+        <span class="apidocSignatureSpan">(element, async, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">highlightElement = function (element, async, callback) {
+		// Find language
+		var language, grammar, parent = element;
+
+		while (parent &#x26;&#x26; !lang.test(parent.className)) {
+			parent = parent.parentNode;
+		}
+
+		if (parent) {
+			language = (parent.className.match(lang) || [,&#x27;&#x27;])[1].toLowerCase();
+			grammar = _.languages[language];
+		}
+
+		// Set language on the element, if not present
+		element.className = element.className.replace(lang, &#x27;&#x27;).replace(/\s+/g, &#x27; &#x27;) + &#x27; language-&#x27; + language;
+
+		// Set language on the parent, for styling
+		parent = element.parentNode;
+
+		if (/pre/i.test(parent.nodeName)) {
+			parent.className = parent.className.replace(lang, &#x27;&#x27;).replace(/\s+/g, &#x27; &#x27;) + &#x27; language-&#x27; + language;
+		}
+
+		var code = element.textContent;
+
+		var env = {
+			element: element,
+			language: language,
+			grammar: grammar,
+			code: code
+		};
+
+		_.hooks.run(&#x27;before-sanity-check&#x27;, env);
+
+		if (!env.code || !env.grammar) {
+			if (env.code) {
+				env.element.textContent = env.code;
+			}
+			_.hooks.run(&#x27;complete&#x27;, env);
+			return;
+		}
+
+		_.hooks.run(&#x27;before-highlight&#x27;, env);
+
+		if (async &#x26;&#x26; _self.Worker) {
+			var worker = new Worker(_.filename);
+
+			worker.onmessage = function(evt) {
+				env.highlightedCode = evt.data;
+
+				_.hooks.run(&#x27;before-insert&#x27;, env);
+
+				env.element.innerHTML = env.highlightedCode;
+
+				callback &#x26;&#x26; callback.call(env.element);
+				_.hooks.run(&#x27;after-highlight&#x27;, env);
+				_.hooks.run(&#x27;complete&#x27;, env);
+			};
+
+			worker.postMessage(JSON.stringify({
+				language: env.language,
+				code: env.code,
+				immediateClose: true
+			}));
+		}
+		else {
+			env.highlightedCode = _.highlight(env.code, env.grammar, env.language);
+
+			_.hooks.run(&#x27;before-insert&#x27;, env);
+
+			env.element.innerHTML = env.highlightedCode;
+
+			callback &#x26;&#x26; callback.call(element);
+
+			_.hooks.run(&#x27;after-highlight&#x27;, env);
+			_.hooks.run(&#x27;complete&#x27;, env);
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		};
+
+		_.hooks.run(&#x22;before-highlightall&#x22;, env);
+
+		var elements = env.elements || document.querySelectorAll(env.selector);
+
+		for (var i=0, element; element = elements[i++];) {
+			_.<span class="apidocCodeKeywordSpan">highlightElement</span>(element, async === true, env.callback);
+		}
+	},
+
+	highlightElement: function(element, async, callback) {
+		// Find language
+		var language, grammar, parent = element;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.tokenize" id="apidoc.element.prismjs.tokenize">
+        function <span class="apidocSignatureSpan">prismjs.</span>tokenize
+        <span class="apidocSignatureSpan">(text, grammar, language)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tokenize = function (text, grammar, language) {
+		var Token = _.Token;
+
+		var strarr = [text];
+
+		var rest = grammar.rest;
+
+		if (rest) {
+			for (var token in rest) {
+				grammar[token] = rest[token];
+			}
+
+			delete grammar.rest;
+		}
+
+		tokenloop: for (var token in grammar) {
+			if(!grammar.hasOwnProperty(token) || !grammar[token]) {
+				continue;
+			}
+
+			var patterns = grammar[token];
+			patterns = (_.util.type(patterns) === &#x22;Array&#x22;) ? patterns : [patterns];
+
+			for (var j = 0; j &#x3c; patterns.length; ++j) {
+				var pattern = patterns[j],
+					inside = pattern.inside,
+					lookbehind = !!pattern.lookbehind,
+					greedy = !!pattern.greedy,
+					lookbehindLength = 0,
+					alias = pattern.alias;
+
+				if (greedy &#x26;&#x26; !pattern.pattern.global) {
+					// Without the global flag, lastIndex won&#x27;t work
+					var flags = pattern.pattern.toString().match(/[imuy]*$/)[0];
+					pattern.pattern = RegExp(pattern.pattern.source, flags + &#x22;g&#x22;);
+				}
+
+				pattern = pattern.pattern || pattern;
+
+				// Don’t cache length as it changes during the loop
+				for (var i=0, pos = 0; i&#x3c;strarr.length; pos += strarr[i].length, ++i) {
+
+					var str = strarr[i];
+
+					if (strarr.length &#x3e; text.length) {
+						// Something went terribly wrong, ABORT, ABORT!
+						break tokenloop;
+					}
+
+					if (str instanceof Token) {
+						continue;
+					}
+
+					pattern.lastIndex = 0;
+
+					var match = pattern.exec(str),
+					    delNum = 1;
+
+					// Greedy patterns can override/remove up to two previously matched tokens
+					if (!match &#x26;&#x26; greedy &#x26;&#x26; i != strarr.length - 1) {
+						pattern.lastIndex = pos;
+						match = pattern.exec(text);
+						if (!match) {
+							break;
+						}
+
+						var from = match.index + (lookbehind ? match[1].length : 0),
+						    to = match.index + match[0].length,
+						    k = i,
+						    p = pos;
+
+						for (var len = strarr.length; k &#x3c; len &#x26;&#x26; p &#x3c; to; ++k) {
+							p += strarr[k].length;
+							// Move the index i to the element in strarr that is closest to from
+							if (from &#x3e;= p) {
+								++i;
+								pos = p;
+							}
+						}
+
+						<span class="apidocCodeCommentSpan">/*
+						 * If strarr[i] is a Token, then the match starts inside another Token, which is invalid
+						 * If strarr[k - 1] is greedy we are in conflict with another greedy pattern
+						 */
+</span>						if (strarr[i] instanceof Token || strarr[k - 1].greedy) {
+							continue;
+						}
+
+						// Number of tokens to delete and replace with the new match
+						delNum = k - i;
+						str = text.slice(pos, p);
+						match.index -= pos;
+					}
+
+					if (!match) {
+						continue;
+					}
+
+					if(lookbehind) {
+						lookbehindLength = match[1].length;
+					}
+
+					var from = match.index + lookbehindLength,
+					    match = match[0].slice(lookbehindLength),
+					    to = from + match.length,
+					    before = str.slice(0, from),
+					    after = str.slice(to);
+
+					var args = [i, delNum];
+
+					if (before) {
+						args.push(before);
+					}
+
+					var wrapped = new Token(token, inside? _.tokenize(match, inside) : match, alias, match, greedy);
+
+					args.push(wrapped);
+
+					if (after) {
+						args.push(after);
+					}
+
+					Array.prototype.splice.apply(strarr, args);
+				}
+			}
+		}
+
+		return strarr;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+			_.hooks.run(&#x27;after-highlight&#x27;, env);
+			_.hooks.run(&#x27;complete&#x27;, env);
+		}
+	},
+
+	highlight: function (text, grammar, language) {
+		var tokens = _.<span class="apidocCodeKeywordSpan">tokenize</span>(text, grammar);
+		return Token.stringify(_.util.encode(tokens), language);
+	},
+
+	tokenize: function(text, grammar, language) {
+		var Token = _.Token;
+
+		var strarr = [text];
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prismjs.Token" id="apidoc.module.prismjs.Token">module prismjs.Token</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.Token.Token" id="apidoc.element.prismjs.Token.Token">
+        function <span class="apidocSignatureSpan">prismjs.</span>Token
+        <span class="apidocSignatureSpan">(type, content, alias, matchedStr, greedy)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Token = function (type, content, alias, matchedStr, greedy) {
+	this.type = type;
+	this.content = content;
+	this.alias = alias;
+	// Copy of the full string this token was created from
+	this.length = (matchedStr || &#x22;&#x22;).length|0;
+	this.greedy = !!greedy;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.Token.stringify" id="apidoc.element.prismjs.Token.stringify">
+        function <span class="apidocSignatureSpan">prismjs.Token.</span>stringify
+        <span class="apidocSignatureSpan">(o, language, parent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringify = function (o, language, parent) {
+	if (typeof o == &#x27;string&#x27;) {
+		return o;
+	}
+
+	if (_.util.type(o) === &#x27;Array&#x27;) {
+		return o.map(function(element) {
+			return Token.stringify(element, language, o);
+		}).join(&#x27;&#x27;);
+	}
+
+	var env = {
+		type: o.type,
+		content: Token.stringify(o.content, language, parent),
+		tag: &#x27;span&#x27;,
+		classes: [&#x27;token&#x27;, o.type],
+		attributes: {},
+		language: language,
+		parent: parent
+	};
+
+	if (env.type == &#x27;comment&#x27;) {
+		env.attributes[&#x27;spellcheck&#x27;] = &#x27;true&#x27;;
+	}
+
+	if (o.alias) {
+		var aliases = _.util.type(o.alias) === &#x27;Array&#x27; ? o.alias : [o.alias];
+		Array.prototype.push.apply(env.classes, aliases);
+	}
+
+	_.hooks.run(&#x27;wrap&#x27;, env);
+
+	var attributes = Object.keys(env.attributes).map(function(name) {
+		return name + &#x27;=&#x22;&#x27; + (env.attributes[name] || &#x27;&#x27;).replace(/&#x22;/g, &#x27;&#x26;quot;&#x27;) + &#x27;&#x22;&#x27;;
+	}).join(&#x27; &#x27;);
+
+	return &#x27;&#x3c;&#x27; + env.tag + &#x27; class=&#x22;&#x27; + env.classes.join(&#x27; &#x27;) + &#x27;&#x22;&#x27; + (attributes ? &#x27; &#x27; + attributes : &#x27;&#x27;) + &#x27;&#x3e;&#x27; + env.content + &#x27;&#x3c;/&#x27; +
+env.tag + &#x27;&#x3e;&#x27;;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				env.element.innerHTML = env.highlightedCode;
+
+				callback &#x26;&#x26; callback.call(env.element);
+				_.hooks.run(&#x27;after-highlight&#x27;, env);
+				_.hooks.run(&#x27;complete&#x27;, env);
+			};
+
+			worker.postMessage(JSON.<span class="apidocCodeKeywordSpan">stringify</span>({
+				language: env.language,
+				code: env.code,
+				immediateClose: true
+			}));
+		}
+		else {
+			env.highlightedCode = _.highlight(env.code, env.grammar, env.language);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prismjs.hooks" id="apidoc.module.prismjs.hooks">module prismjs.hooks</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.hooks.add" id="apidoc.element.prismjs.hooks.add">
+        function <span class="apidocSignatureSpan">prismjs.hooks.</span>add
+        <span class="apidocSignatureSpan">(name, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (name, callback) {
+			var hooks = _.hooks.all;
+
+			hooks[name] = hooks[name] || [];
+
+			hooks[name].push(callback);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+		}
+	},
+	&#x27;entity&#x27;: /&#x26;#?[\da-z]{1,8};/i
+};
+
+// Plugin to make entity title show the real entity, idea by Roman Komarov
+Prism.hooks.<span class="apidocCodeKeywordSpan">add</span>(&#x27;wrap&#x27;, function(env) {
+
+	if (env.type === &#x27;entity&#x27;) {
+		env.attributes[&#x27;title&#x27;] = env.content.replace(/&#x26;amp;/, &#x27;&#x26;&#x27;);
+	}
+});
+
+Prism.languages.xml = Prism.languages.markup;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.hooks.run" id="apidoc.element.prismjs.hooks.run">
+        function <span class="apidocSignatureSpan">prismjs.hooks.</span>run
+        <span class="apidocSignatureSpan">(name, env)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (name, env) {
+			var callbacks = _.hooks.all[name];
+
+			if (!callbacks || !callbacks.length) {
+				return;
+			}
+
+			for (var i=0, callback; callback = callbacks[i++];) {
+				callback(env);
+			}
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	highlightAll: function(async, callback) {
+		var env = {
+			callback: callback,
+			selector: &#x27;code[class*=&#x22;language-&#x22;], [class*=&#x22;language-&#x22;] code, code[class*=&#x22;lang-&#x22;], [class
+*=&#x22;lang-&#x22;] code&#x27;
+		};
+
+		_.hooks.<span class="apidocCodeKeywordSpan">run</span>(&#x22;before-highlightall&#x22;, env);
+
+		var elements = env.elements || document.querySelectorAll(env.selector);
+
+		for (var i=0, element; element = elements[i++];) {
+			_.highlightElement(element, async === true, env.callback);
+		}
+	},
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prismjs.languages" id="apidoc.module.prismjs.languages">module prismjs.languages</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.languages.DFS" id="apidoc.element.prismjs.languages.DFS">
+        function <span class="apidocSignatureSpan">prismjs.languages.</span>DFS
+        <span class="apidocSignatureSpan">(o, callback, type, visited)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">DFS = function (o, callback, type, visited) {
+			visited = visited || {};
+			for (var i in o) {
+				if (o.hasOwnProperty(i)) {
+					callback.call(o, i, o[i], type || i);
+
+					if (_.util.type(o[i]) === &#x27;Object&#x27; &#x26;&#x26; !visited[_.util.objId(o[i])]) {
+						visited[_.util.objId(o[i])] = true;
+						_.languages.DFS(o[i], callback, null, visited);
+					}
+					else if (_.util.type(o[i]) === &#x27;Array&#x27; &#x26;&#x26; !visited[_.util.objId(o[i])]) {
+						visited[_.util.objId(o[i])] = true;
+						_.languages.DFS(o[i], callback, i, visited);
+					}
+				}
+			}
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					}
+
+					ret[token] = grammar[token];
+				}
+			}
+
+			// Update references in other language definitions
+			_.languages.<span class="apidocCodeKeywordSpan">DFS</span>(_.languages, function(key, value) {
+				if (value === root[inside] &#x26;&#x26; key != inside) {
+					this[key] = ret;
+				}
+			});
+
+			return root[inside] = ret;
+		},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.languages.extend" id="apidoc.element.prismjs.languages.extend">
+        function <span class="apidocSignatureSpan">prismjs.languages.</span>extend
+        <span class="apidocSignatureSpan">(id, redef)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (id, redef) {
+			var lang = _.util.clone(_.languages[id]);
+
+			for (var key in redef) {
+				lang[key] = redef[key];
+			}
+
+			return lang;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+
+/* **********************************************
+     Begin prism-javascript.js
+********************************************** */
+
+Prism.languages.javascript = Prism.languages.<span class="apidocCodeKeywordSpan">extend</span>(&#x27;clike&#x27;, {
+	&#x27;keyword&#x27;: /\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends
+|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return
+|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,
+	&#x27;number&#x27;: /\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,
+	// Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)
+	&#x27;function&#x27;: /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i,
+	&#x27;operator&#x27;: /--?|\+\+?|!=?=?|&#x3c;=?|&#x3e;=?|==?=?|&#x26;&#x26;?|\|\|?|\?|\*\*?|\/|~|\^|%|\.{3}/
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.languages.insertBefore" id="apidoc.element.prismjs.languages.insertBefore">
+        function <span class="apidocSignatureSpan">prismjs.languages.</span>insertBefore
+        <span class="apidocSignatureSpan">(inside, before, insert, root)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">insertBefore = function (inside, before, insert, root) {
+			root = root || _.languages;
+			var grammar = root[inside];
+
+			if (arguments.length == 2) {
+				insert = arguments[1];
+
+				for (var newToken in insert) {
+					if (insert.hasOwnProperty(newToken)) {
+						grammar[newToken] = insert[newToken];
+					}
+				}
+
+				return grammar;
+			}
+
+			var ret = {};
+
+			for (var token in grammar) {
+
+				if (grammar.hasOwnProperty(token)) {
+
+					if (token == before) {
+
+						for (var newToken in insert) {
+
+							if (insert.hasOwnProperty(newToken)) {
+								ret[newToken] = insert[newToken];
+							}
+						}
+					}
+
+					ret[token] = grammar[token];
+				}
+			}
+
+			// Update references in other language definitions
+			_.languages.DFS(_.languages, function(key, value) {
+				if (value === root[inside] &#x26;&#x26; key != inside) {
+					this[key] = ret;
+				}
+			});
+
+			return root[inside] = ret;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	&#x27;function&#x27;: /[-a-z0-9]+(?=\()/i,
+	&#x27;punctuation&#x27;: /[(){};:]/
+};
+
+Prism.languages.css[&#x27;atrule&#x27;].inside.rest = Prism.util.clone(Prism.languages.css);
+
+if (Prism.languages.markup) {
+	Prism.languages.<span class="apidocCodeKeywordSpan">insertBefore</span>(&#x27;markup&#x27;, &#x27;tag&#x27;, {
+		&#x27;style&#x27;: {
+			pattern: /(&#x3c;style[\w\W]*?&#x3e;)[\w\W]*?(?=&#x3c;\/style&#x3e;)/i,
+			lookbehind: true,
+			inside: Prism.languages.css,
+			alias: &#x27;language-css&#x27;
+		}
+	});
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prismjs.prism_core" id="apidoc.module.prismjs.prism_core">module prismjs.prism_core</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.prism_core.Token" id="apidoc.element.prismjs.prism_core.Token">
+        function <span class="apidocSignatureSpan">prismjs.prism_core.</span>Token
+        <span class="apidocSignatureSpan">(type, content, alias, matchedStr, greedy)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Token = function (type, content, alias, matchedStr, greedy) {
+	this.type = type;
+	this.content = content;
+	this.alias = alias;
+	// Copy of the full string this token was created from
+	this.length = (matchedStr || &#x22;&#x22;).length|0;
+	this.greedy = !!greedy;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.prism_core.highlight" id="apidoc.element.prismjs.prism_core.highlight">
+        function <span class="apidocSignatureSpan">prismjs.prism_core.</span>highlight
+        <span class="apidocSignatureSpan">(text, grammar, language)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">highlight = function (text, grammar, language) {
+		var tokens = _.tokenize(text, grammar);
+		return Token.stringify(_.util.encode(tokens), language);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			worker.postMessage(JSON.stringify({
+				language: env.language,
+				code: env.code,
+				immediateClose: true
+			}));
+		}
+		else {
+			env.highlightedCode = _.<span class="apidocCodeKeywordSpan">highlight</span>(env.code, env.grammar, env.language);
+
+			_.hooks.run(&#x27;before-insert&#x27;, env);
+
+			env.element.innerHTML = env.highlightedCode;
+
+			callback &#x26;&#x26; callback.call(element);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.prism_core.highlightAll" id="apidoc.element.prismjs.prism_core.highlightAll">
+        function <span class="apidocSignatureSpan">prismjs.prism_core.</span>highlightAll
+        <span class="apidocSignatureSpan">(async, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">highlightAll = function (async, callback) {
+		var env = {
+			callback: callback,
+			selector: &#x27;code[class*=&#x22;language-&#x22;], [class*=&#x22;language-&#x22;] code, code[class*=&#x22;lang-&#x22;], [class*=&#x22;lang-&#x22;] code&#x27;
+		};
+
+		_.hooks.run(&#x22;before-highlightall&#x22;, env);
+
+		var elements = env.elements || document.querySelectorAll(env.selector);
+
+		for (var i=0, element; element = elements[i++];) {
+			_.highlightElement(element, async === true, env.callback);
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.prism_core.highlightElement" id="apidoc.element.prismjs.prism_core.highlightElement">
+        function <span class="apidocSignatureSpan">prismjs.prism_core.</span>highlightElement
+        <span class="apidocSignatureSpan">(element, async, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">highlightElement = function (element, async, callback) {
+		// Find language
+		var language, grammar, parent = element;
+
+		while (parent &#x26;&#x26; !lang.test(parent.className)) {
+			parent = parent.parentNode;
+		}
+
+		if (parent) {
+			language = (parent.className.match(lang) || [,&#x27;&#x27;])[1].toLowerCase();
+			grammar = _.languages[language];
+		}
+
+		// Set language on the element, if not present
+		element.className = element.className.replace(lang, &#x27;&#x27;).replace(/\s+/g, &#x27; &#x27;) + &#x27; language-&#x27; + language;
+
+		// Set language on the parent, for styling
+		parent = element.parentNode;
+
+		if (/pre/i.test(parent.nodeName)) {
+			parent.className = parent.className.replace(lang, &#x27;&#x27;).replace(/\s+/g, &#x27; &#x27;) + &#x27; language-&#x27; + language;
+		}
+
+		var code = element.textContent;
+
+		var env = {
+			element: element,
+			language: language,
+			grammar: grammar,
+			code: code
+		};
+
+		_.hooks.run(&#x27;before-sanity-check&#x27;, env);
+
+		if (!env.code || !env.grammar) {
+			if (env.code) {
+				env.element.textContent = env.code;
+			}
+			_.hooks.run(&#x27;complete&#x27;, env);
+			return;
+		}
+
+		_.hooks.run(&#x27;before-highlight&#x27;, env);
+
+		if (async &#x26;&#x26; _self.Worker) {
+			var worker = new Worker(_.filename);
+
+			worker.onmessage = function(evt) {
+				env.highlightedCode = evt.data;
+
+				_.hooks.run(&#x27;before-insert&#x27;, env);
+
+				env.element.innerHTML = env.highlightedCode;
+
+				callback &#x26;&#x26; callback.call(env.element);
+				_.hooks.run(&#x27;after-highlight&#x27;, env);
+				_.hooks.run(&#x27;complete&#x27;, env);
+			};
+
+			worker.postMessage(JSON.stringify({
+				language: env.language,
+				code: env.code,
+				immediateClose: true
+			}));
+		}
+		else {
+			env.highlightedCode = _.highlight(env.code, env.grammar, env.language);
+
+			_.hooks.run(&#x27;before-insert&#x27;, env);
+
+			env.element.innerHTML = env.highlightedCode;
+
+			callback &#x26;&#x26; callback.call(element);
+
+			_.hooks.run(&#x27;after-highlight&#x27;, env);
+			_.hooks.run(&#x27;complete&#x27;, env);
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		};
+
+		_.hooks.run(&#x22;before-highlightall&#x22;, env);
+
+		var elements = env.elements || document.querySelectorAll(env.selector);
+
+		for (var i=0, element; element = elements[i++];) {
+			_.<span class="apidocCodeKeywordSpan">highlightElement</span>(element, async === true, env.callback);
+		}
+	},
+
+	highlightElement: function(element, async, callback) {
+		// Find language
+		var language, grammar, parent = element;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.prism_core.tokenize" id="apidoc.element.prismjs.prism_core.tokenize">
+        function <span class="apidocSignatureSpan">prismjs.prism_core.</span>tokenize
+        <span class="apidocSignatureSpan">(text, grammar, language)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tokenize = function (text, grammar, language) {
+		var Token = _.Token;
+
+		var strarr = [text];
+
+		var rest = grammar.rest;
+
+		if (rest) {
+			for (var token in rest) {
+				grammar[token] = rest[token];
+			}
+
+			delete grammar.rest;
+		}
+
+		tokenloop: for (var token in grammar) {
+			if(!grammar.hasOwnProperty(token) || !grammar[token]) {
+				continue;
+			}
+
+			var patterns = grammar[token];
+			patterns = (_.util.type(patterns) === &#x22;Array&#x22;) ? patterns : [patterns];
+
+			for (var j = 0; j &#x3c; patterns.length; ++j) {
+				var pattern = patterns[j],
+					inside = pattern.inside,
+					lookbehind = !!pattern.lookbehind,
+					greedy = !!pattern.greedy,
+					lookbehindLength = 0,
+					alias = pattern.alias;
+
+				if (greedy &#x26;&#x26; !pattern.pattern.global) {
+					// Without the global flag, lastIndex won&#x27;t work
+					var flags = pattern.pattern.toString().match(/[imuy]*$/)[0];
+					pattern.pattern = RegExp(pattern.pattern.source, flags + &#x22;g&#x22;);
+				}
+
+				pattern = pattern.pattern || pattern;
+
+				// Don’t cache length as it changes during the loop
+				for (var i=0, pos = 0; i&#x3c;strarr.length; pos += strarr[i].length, ++i) {
+
+					var str = strarr[i];
+
+					if (strarr.length &#x3e; text.length) {
+						// Something went terribly wrong, ABORT, ABORT!
+						break tokenloop;
+					}
+
+					if (str instanceof Token) {
+						continue;
+					}
+
+					pattern.lastIndex = 0;
+
+					var match = pattern.exec(str),
+					    delNum = 1;
+
+					// Greedy patterns can override/remove up to two previously matched tokens
+					if (!match &#x26;&#x26; greedy &#x26;&#x26; i != strarr.length - 1) {
+						pattern.lastIndex = pos;
+						match = pattern.exec(text);
+						if (!match) {
+							break;
+						}
+
+						var from = match.index + (lookbehind ? match[1].length : 0),
+						    to = match.index + match[0].length,
+						    k = i,
+						    p = pos;
+
+						for (var len = strarr.length; k &#x3c; len &#x26;&#x26; p &#x3c; to; ++k) {
+							p += strarr[k].length;
+							// Move the index i to the element in strarr that is closest to from
+							if (from &#x3e;= p) {
+								++i;
+								pos = p;
+							}
+						}
+
+						<span class="apidocCodeCommentSpan">/*
+						 * If strarr[i] is a Token, then the match starts inside another Token, which is invalid
+						 * If strarr[k - 1] is greedy we are in conflict with another greedy pattern
+						 */
+</span>						if (strarr[i] instanceof Token || strarr[k - 1].greedy) {
+							continue;
+						}
+
+						// Number of tokens to delete and replace with the new match
+						delNum = k - i;
+						str = text.slice(pos, p);
+						match.index -= pos;
+					}
+
+					if (!match) {
+						continue;
+					}
+
+					if(lookbehind) {
+						lookbehindLength = match[1].length;
+					}
+
+					var from = match.index + lookbehindLength,
+					    match = match[0].slice(lookbehindLength),
+					    to = from + match.length,
+					    before = str.slice(0, from),
+					    after = str.slice(to);
+
+					var args = [i, delNum];
+
+					if (before) {
+						args.push(before);
+					}
+
+					var wrapped = new Token(token, inside? _.tokenize(match, inside) : match, alias, match, greedy);
+
+					args.push(wrapped);
+
+					if (after) {
+						args.push(after);
+					}
+
+					Array.prototype.splice.apply(strarr, args);
+				}
+			}
+		}
+
+		return strarr;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+			_.hooks.run(&#x27;after-highlight&#x27;, env);
+			_.hooks.run(&#x27;complete&#x27;, env);
+		}
+	},
+
+	highlight: function (text, grammar, language) {
+		var tokens = _.<span class="apidocCodeKeywordSpan">tokenize</span>(text, grammar);
+		return Token.stringify(_.util.encode(tokens), language);
+	},
+
+	tokenize: function(text, grammar, language) {
+		var Token = _.Token;
+
+		var strarr = [text];
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prismjs.util" id="apidoc.module.prismjs.util">module prismjs.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.util.clone" id="apidoc.element.prismjs.util.clone">
+        function <span class="apidocSignatureSpan">prismjs.util.</span>clone
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function (o) {
+			var type = _.util.type(o);
+
+			switch (type) {
+				case &#x27;Object&#x27;:
+					var clone = {};
+
+					for (var key in o) {
+						if (o.hasOwnProperty(key)) {
+							clone[key] = _.util.clone(o[key]);
+						}
+					}
+
+					return clone;
+
+				case &#x27;Array&#x27;:
+					// Check for existence for IE8
+					return o.map &#x26;&#x26; o.map(function(v) { return _.util.clone(v); });
+			}
+
+			return o;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+			switch (type) {
+				case &#x27;Object&#x27;:
+					var clone = {};
+
+					for (var key in o) {
+						if (o.hasOwnProperty(key)) {
+							clone[key] = _.util.<span class="apidocCodeKeywordSpan">clone</span>(o[key]);
+						}
+					}
+
+					return clone;
+
+				case &#x27;Array&#x27;:
+					// Check for existence for IE8
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.util.encode" id="apidoc.element.prismjs.util.encode">
+        function <span class="apidocSignatureSpan">prismjs.util.</span>encode
+        <span class="apidocSignatureSpan">(tokens)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode = function (tokens) {
+			if (tokens instanceof Token) {
+				return new Token(tokens.type, _.util.encode(tokens.content), tokens.alias);
+			} else if (_.util.type(tokens) === &#x27;Array&#x27;) {
+				return tokens.map(_.util.encode);
+			} else {
+				return tokens.replace(/&#x26;/g, &#x27;&#x26;amp;&#x27;).replace(/&#x3c;/g, &#x27;&#x26;lt;&#x27;).replace(/\u00a0/g, &#x27; &#x27;);
+			}
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var lang = /\blang(?:uage)?-(\w+)\b/i;
+var uniqueId = 0;
+
+var _ = _self.Prism = {
+	util: {
+		encode: function (tokens) {
+			if (tokens instanceof Token) {
+				return new Token(tokens.type, _.util.<span class="apidocCodeKeywordSpan">encode</span>(tokens.content), tokens.alias);
+			} else if (_.util.type(tokens) === &#x27;Array&#x27;) {
+				return tokens.map(_.util.encode);
+			} else {
+				return tokens.replace(/&#x26;/g, &#x27;&#x26;amp;&#x27;).replace(/&#x3c;/g, &#x27;&#x26;lt;&#x27;).replace(/\u00a0/g, &#x27; &#
+x27;);
+			}
+		},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.util.objId" id="apidoc.element.prismjs.util.objId">
+        function <span class="apidocSignatureSpan">prismjs.util.</span>objId
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">objId = function (obj) {
+			if (!obj[&#x27;__id&#x27;]) {
+				Object.defineProperty(obj, &#x27;__id&#x27;, { value: ++uniqueId });
+			}
+			return obj[&#x27;__id&#x27;];
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		// Traverse a language definition with Depth First Search
+		DFS: function(o, callback, type, visited) {
+			visited = visited || {};
+			for (var i in o) {
+				if (o.hasOwnProperty(i)) {
+					callback.call(o, i, o[i], type || i);
+
+					if (_.util.type(o[i]) === &#x27;Object&#x27; &#x26;&#x26; !visited[_.util.<span class="apidocCodeKeywordSpan">objId</span>(
+o[i])]) {
+						visited[_.util.objId(o[i])] = true;
+						_.languages.DFS(o[i], callback, null, visited);
+					}
+					else if (_.util.type(o[i]) === &#x27;Array&#x27; &#x26;&#x26; !visited[_.util.objId(o[i])]) {
+						visited[_.util.objId(o[i])] = true;
+						_.languages.DFS(o[i], callback, i, visited);
+					}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prismjs.util.type" id="apidoc.element.prismjs.util.type">
+        function <span class="apidocSignatureSpan">prismjs.util.</span>type
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">type = function (o) {
+			return Object.prototype.toString.call(o).match(/\[object (\w+)\]/)[1];
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var uniqueId = 0;
+
+var _ = _self.Prism = {
+	util: {
+		encode: function (tokens) {
+			if (tokens instanceof Token) {
+				return new Token(tokens.type, _.util.encode(tokens.content), tokens.alias);
+			} else if (_.util.<span class="apidocCodeKeywordSpan">type</span>(tokens) === &#x27;Array&#x27;) {
+				return tokens.map(_.util.encode);
+			} else {
+				return tokens.replace(/&#x26;/g, &#x27;&#x26;amp;&#x27;).replace(/&#x3c;/g, &#x27;&#x26;lt;&#x27;).replace(/\u00a0/g, &#x27; &#
+x27;);
+			}
+		},
+
+		type: function (o) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
